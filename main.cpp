@@ -82,7 +82,7 @@ int getClusFromOffset(int offset);
 int main(int argc, char* argv[]){
     // if(argc==1)return 0;
     // char *filesys=argv[1];
-    char filesys[]="ref.img";
+    char filesys[]="a.img";
 
     //Load image
     BPB bpb;
@@ -237,11 +237,11 @@ void ls_core(int offset,bool details,char* whole_path){
                     if(isDir)
                         showFileCount(getClusN_offset(r_ptr->DIR_FstClus));
                     else
-                        colorPrint(" %d",r_ptr->DIR_FileSize);
+                        colorPrint("  %d",r_ptr->DIR_FileSize);
                 }
                 colorPrint("\n");
             }else{
-                colorPrint(" ");
+                colorPrint("  ");
             }
         }
     }
