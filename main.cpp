@@ -200,15 +200,16 @@ void my_ls(char* filepath,bool details){
     else if(IsDir_real)
         ls_core(offset,details,filepath);
     else {
-        colorPrint("%s",filepath);
-        if(details){
-            RootEntry root,*r_ptr = &root;
-            fseek(fat12,offset_last ,SEEK_SET);
-            fread(r_ptr,1,32,fat12);
-            colorPrint(" %d\n",r_ptr->DIR_FileSize);
-        }else{
-            colorPrint("\n");
-        }
+        // colorPrint("%s",filepath);
+        // if(details){
+        //     RootEntry root,*r_ptr = &root;
+        //     fseek(fat12,offset_last ,SEEK_SET);
+        //     fread(r_ptr,1,32,fat12);
+        //     colorPrint(" %d\n",r_ptr->DIR_FileSize);
+        // }else{
+        //     colorPrint("\n");
+        // }
+        colorPrint("Invalid command!\n");
     }
 }
 
